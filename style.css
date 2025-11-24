@@ -1,0 +1,188 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg: #ffffff;
+  --card: #ffffff;
+  --muted: #8a8a8f;
+  --border: #ececec;
+  --accent: #007AFF;
+  --success: #16a34a;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, #FBFCFD 0%, #FFFFFF 100%);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:40px 20px;
+}
+
+/* Container */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* Header */
+.header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:28px;
+}
+.logo{
+  width:44px;
+  height:44px;
+  background:var(--accent);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:700;
+  box-shadow: var(--shadow);
+}
+.title{
+  font-size:20px;
+  font-weight:600;
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  padding:22px;
+}
+
+/* Upload box */
+.upload-box{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:28px;
+  border-radius:12px;
+  border:1px dashed #eef2f7;
+  background: linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.00));
+}
+.upload-left{
+  width:72px;
+  height:72px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(0,122,255,0.12), rgba(0,122,255,0.06));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+  font-size:28px;
+  font-weight:700;
+}
+.upload-meta h3{margin:0;font-size:18px}
+.upload-meta p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+/* Button */
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow: 0 6px 16px rgba(0,122,255,0.14);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{
+  background:transparent;
+  color:var(--accent);
+  box-shadow:none;
+  border:1px solid rgba(0,122,255,0.12);
+}
+
+/* Small text */
+.small{font-size:13px;color:var(--muted)}
+
+/* Grid for result cards */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap:18px;
+  margin-top:18px;
+}
+
+/* Subject Card */
+.subject-card{
+  padding:16px;
+  border-radius:12px;
+  background:linear-gradient(180deg, #ffffff, #fbfbff);
+  border: 1px solid var(--border);
+}
+.subj-title{font-weight:600;margin-bottom:8px}
+.subj-pct{font-size:28px;font-weight:700;margin:6px 0}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:12px;
+  color:white;
+}
+.badge.safe{background:var(--success)}
+.badge.warn{background:var(--warn)}
+.badge.def{background:var(--danger)}
+
+/* Summary card */
+.summary{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+.summary-left{
+  flex:0 0 160px;
+  text-align:center;
+  padding:14px;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(0,122,255,0.06), rgba(0,122,255,0.02));
+}
+.summary-left h1{margin:0;font-size:34px;color:var(--accent)}
+.summary-right{flex:1}
+
+/* Table fallback style */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:8px;
+}
+.table th{ text-align:left; padding:10px; color:var(--muted); font-size:13px; font-weight:600}
+.table td{ padding:10px; border-top:1px solid var(--border)}
+
+/* Charts */
+.charts{
+  display:flex;
+  gap:16px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+.chart-card{
+  flex:1;
+  min-width:260px;
+  max-width:640px;
+  border-radius:12px;
+  padding:12px;
+  border:1px solid var(--border);
+  background:#fff;
+}
+
+/* Footer */
+.footer{ margin-top:30px; text-align:center; color:var(--muted); font-size:13px}

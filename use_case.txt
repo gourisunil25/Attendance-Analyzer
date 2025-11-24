@@ -1,0 +1,12 @@
+Use Case: Attendance Analyzer
+
+Actors:
+- Student
+- System
+
+Primary flow:
+1. Student uploads CSV via web UI.
+2. System validates CSV.
+3. System computes subject-wise percentages.
+4. System generates charts.
+5. System displays result.

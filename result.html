@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Result - Attendance Analyzer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">AA</div>
+      <div>
+        <div class="title">Attendance Report</div>
+        <div class="small">Aesthetic card-grid summary</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="card summary" style="margin-bottom:18px;">
+        <div class="summary-left">
+          <h1>{{ overall.percentage }}%</h1>
+          <div class="small">Overall Attendance</div>
+        </div>
+        <div class="summary-right">
+          <div style="display:flex; gap:12px; align-items:center;">
+            <div>
+              <div class="small">Total Attended</div>
+              <div style="font-weight:700">{{ overall.attended }}</div>
+            </div>
+            <div>
+              <div class="small">Total Classes</div>
+              <div style="font-weight:700">{{ overall.total }}</div>
+            </div>
+            <div style="margin-left:auto">
+              <a href="/" class="btn ghost">Analyze another</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="card">
+        <h3 style="margin:0 0 6px 0">Subjects</h3>
+        <div class="small">Each card shows subject percentage and status</div>
+
+        <div class="grid" style="margin-top:16px;">
+          {% for subj, v in result.items() %}
+          <div class="subject-card">
+            <div class="subj-title">{{ subj }}</div>
+            <div class="subj-pct">{{ v.percentage }}%</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
+              {% if v.percentage >= 75 %}
+                <span class="badge safe">Safe</span>
+              {% elif v.percentage >= 60 %}
+                <span class="badge warn">Warning</span>
+              {% else %}
+                <span class="badge def">Defaulter</span>
+              {% endif %}
+              <div class="small" style="margin-left:auto">{{ v.attended }} / {{ v.total }} attended</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section style="margin-top:18px;">
+        <div class="card">
+          <h3 style="margin:0 0 8px 0">Charts</h3>
+          <div class="charts">
+            <div class="chart-card">
+              {% if bar_img %}
+              <img src="{{ bar_img }}" alt="Bar chart" style="max-width:100%; border-radius:10px;">
+              {% endif %}
+            </div>
+            <div class="chart-card">
+              {% if pie_img %}
+              <img src="{{ pie_img }}" alt="Pie chart" style="max-width:100%; border-radius:10px;">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      Attendance Analyzer • Built for VITyarthi • Project guidelines: /mnt/data/BuildYourOwnProject.pdf
+    </footer>
+  </div>
+</body>
+</html>

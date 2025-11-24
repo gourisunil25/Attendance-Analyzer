@@ -1,0 +1,5 @@
+Classes (conceptual):
+- FileHandler: save_upload(file), validate_format(path)
+- Analyzer: analyze_attendance(path) -> returns dict
+- Visualizer: make_bar_chart(result,path), make_pie_chart(result,path)
+- WebApp: Flask endpoints for index and result

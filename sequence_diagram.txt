@@ -1,0 +1,7 @@
+Sequence:
+Student -> WebApp:index(): upload file
+WebApp -> FileHandler: save_upload
+WebApp -> Analyzer: analyze_attendance
+Analyzer -> Visualizer: generate charts
+Visualizer -> WebApp: chart paths
+WebApp -> Student: render result page
