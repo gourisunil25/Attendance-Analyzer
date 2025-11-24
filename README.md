@@ -1,7 +1,24 @@
-# Attendance Analyzer (Flask) — Aesthetic UI
+# Flask Attendance Analyzer 📊
 
-## Overview
-A lightweight Flask web app that analyzes attendance data from a CSV and displays subject-wise percentages and modern visualizations. This version has a minimal, Apple-like aesthetic with an accent color of #007AFF and a card-grid layout for subjects.
+**A simple, clean tool to visualize attendance stats.**
+
+I built this project because reading raw CSV files is tedious. This app takes your attendance data, calculates the percentages for you, and presents it in a modern, minimalist dashboard.
+
+## 🚀 Features
+
+* **Instant Analysis:** Upload a CSV and get subject-wise breakdowns immediately.
+* **Visuals:** Generates Bar and Pie charts automatically using Matplotlib.
+* **Flexible Input:** Works with three different CSV formats (see below).
+* **Responsive UI:** Uses a custom CSS grid layout that looks good on desktop and mobile.
+
+## 🛠️ How to Run Locally
+
+This is a standard Flask app. I recommend using a virtual environment
+
+**1. Clone and Setup**
+```bash
+git clone [https://github.com/yourusername/attendance-analyzer.git](https://github.com/yourusername/attendance-analyzer.git)
+cd attendance-analyzer
 
 ## How to run
 1. Create a virtual environment:
@@ -21,5 +38,27 @@ A lightweight Flask web app that analyzes attendance data from a CSV and display
 2. **Per-class rows** with columns: `Subject,Present` (Present=1 if attended else 0)  
 3. **Per-student with Present** columns: `Student,Present` (will give per-student %)
 
-## Notes
-- The original VITyarthi project guidelines PDF you uploaded is referenced here: `/mnt/data/BuildYourOwnProject.pdf`
+## 🏗️ Project Structure
+attendance-analyzer/
+├── app.py              # Main Flask application logic
+├── requirements.txt    # Python dependencies
+├── static/
+│   ├── css/
+│   │   └── style.css   # Styling (CSS Grid, Fonts)
+│   └── img/            # Generated charts are saved here
+├── templates/
+│   ├── index.html      # Upload page
+│   └── result.html     # Dashboard / Results page
+└── uploads/            # Temporary storage for uploaded CSVs
+
+## 🛠️ Tech Stack
+Backend: Python (Flask)
+
+Data Processing: Pandas
+
+Visualization: Matplotlib
+
+Frontend: HTML5, CSS3 (Custom styling)
+
+## 📝 Context
+This project was developed as part of the VITyarthi "Build Your Own Project" initiative. The goal was to create a functional, user-friendly data analysis tool that solves a real-world student problem (tracking attendance criteria).
